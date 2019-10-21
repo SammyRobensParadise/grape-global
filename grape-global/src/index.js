@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import { Button } from "./lib";
-import { Container, Row, Col, Jumbotron } from "reactstrap";
+import { Button, MultiButton } from "./lib";
+import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -45,25 +45,33 @@ padding-left: 45px;
 }
 `;
 const Code = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro&display=swap');
-font-family: 'Source Code Pro', monospace;
-font-weight: 100;
-background-color: #DCDCDC;
-border-radius: 3px;
-margin-bottom: 30px;
-width: 160px;
-height: 100%;
-`
+  @import url("https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro&display=swap");
+  font-family: "Source Code Pro", monospace;
+  font-weight: 100;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  width: 250px;
+  height: 100%;
+  margin-top: 45px;
+  text-align: left;
+`;
 const Subsection = styled.p`
-text-align: center
-`
+  text-align: center;
+`;
+
 const App = () => (
   <Wrapper>
     <Jumbotron>
-      <Title>Coetus | Design</Title>
+      <Title>Raindrop | Design</Title>
 
-      <Subsection>Simple Design components that when used together help build beauiful user interfaces.</Subsection>
-      <Subsection>Created with  ❤️ by <a href="https://sammyrp.com">Sammy Robens-Paradise</a> for Grape.</Subsection>
+      <Subsection>
+        Simple design components that, used together, build beauiful user
+        interfaces, built in React.js.
+      </Subsection>
+      <Subsection>
+        Created with ❤️ by{" "}
+        <a href="https://sammyrp.com">Sammy Robens-Paradise</a> for Grape.
+      </Subsection>
     </Jumbotron>
     <SectionGradient></SectionGradient>
     <ButtonsSection></ButtonsSection>
@@ -76,21 +84,69 @@ const ButtonsSection = () => (
       <SectionTitle>Buttons and Toggles</SectionTitle>
     </Jumbotron>
     <Container>
-        <Content>
-        <Code>Props: text,small,event</Code>
-          <Button
-            text="Sign Up"
-            small={true}
-            event={() => alert("Button Clicked!")}
-          ></Button>
-        </Content>
       <Content>
-          <Button
-            text="Sign Up"
-            small={true}
-            event={() => alert("Button Clicked!")}
-          ></Button>
-        </Content>
+        
+        <Code>Button Props: text,small,event</Code>
+        <Button
+          text="Sign Up"
+          small={true}
+          event={() => alert("Button Clicked!")}
+        ></Button>
+      </Content>
+      <Content>
+        <Code>Button Props: text,small,event,dropShadow</Code>
+        <Button
+          text="Sign Up"
+          small={true}
+          event={() => alert("Button Clicked!")}
+          dropShadow={true}
+        ></Button>
+      </Content>
+      <Content>
+        <Code>Button Props: text,small,event,hover,invert</Code>
+        <Button
+          text="Sign Up"
+          small={true}
+          invert={true}
+          hover={true}
+          event={() => alert("Button Clicked!")}
+        ></Button>
+      </Content>
+      <Content>
+        <Code>Button Props: text,small,event,dropShadow,hover,invert</Code>
+        <Button
+          text="Sign Up"
+          small={true}
+          invert={true}
+          hover={true}
+          dropShadow={true}
+          event={() => alert("Button Clicked!")}
+        ></Button>
+      </Content>
+      <Content>
+        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent</Code>
+        <MultiButton
+        textLeft="Left Buttton"
+        textRight="Right Button"
+        leftFocus={true}
+        rightFocus={false}
+        leftEvent={() => alert('left button clicked')}
+        rightEvent={() => alert('right button clicked')}
+        ></MultiButton>
+      </Content>
+      <br></br>
+      <Content>
+        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow</Code>
+        <MultiButton
+        textLeft="Left Buttton"
+        textRight="Right Button"
+        leftFocus={true}
+        rightFocus={false}
+        leftEvent={() => alert('left button clicked')}
+        rightEvent={() => alert('right button clicked')}
+        dropShadow={true}
+        ></MultiButton>
+      </Content>
     </Container>
   </Container>
 );
