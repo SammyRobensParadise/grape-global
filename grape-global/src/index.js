@@ -140,8 +140,8 @@ const ButtonsSection = () => (
         <MultiButton
         textLeft="Left Buttton"
         textRight="Right Button"
-        leftFocus={true}
-        rightFocus={false}
+        leftFocus={false}
+        rightFocus={true}
         leftEvent={() => alert('left button clicked')}
         rightEvent={() => alert('right button clicked')}
         dropShadow={true}
