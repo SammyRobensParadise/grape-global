@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Button, MultiButton } from "./lib";
+import { Button, MultiButton, Chevron } from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
 
@@ -91,6 +91,7 @@ const ButtonsSection = () => (
           text="Sign Up"
           small={true}
           event={() => alert("Button Clicked!")}
+          hover={true}
         ></Button>
       </Content>
       <Content>
@@ -100,6 +101,7 @@ const ButtonsSection = () => (
           small={true}
           event={() => alert("Button Clicked!")}
           dropShadow={true}
+          hover={true}
         ></Button>
       </Content>
       <Content>
@@ -146,6 +148,13 @@ const ButtonsSection = () => (
         rightEvent={() => alert('right button clicked')}
         dropShadow={true}
         ></MultiButton>
+      </Content>
+      <Content>
+        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow</Code>
+        <Chevron
+        direction='DOWN'
+        >
+        </Chevron>
       </Content>
     </Container>
   </Container>
