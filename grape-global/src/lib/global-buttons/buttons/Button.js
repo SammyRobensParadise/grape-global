@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ButttonEl = styled.div`
   background-color: ${p => (p.invert ? "#fff" : "#2ebf91")};
-  width: ${p => (p.small ? "148px" : "230px")};
+  width: ${p => (p.small ? "148px" : "300px")};
   color: ${p => p.invert? '#2ebf91' : '#fff'};
   text-align: center;
   height: 58px;
