@@ -149,10 +149,36 @@ const ButtonsSection = () => (
         dropShadow={true}
         ></MultiButton>
       </Content>
+      <br></br>
       <Content>
-        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow</Code>
+        <Code> Chevron Props: direction, color</Code>
         <Chevron
-        direction='DOWN'
+        direction="RIGHT"
+        color="#2EBF91"
+        >
+        </Chevron>
+      </Content>
+      <Content>
+        <Code> Chevron Props: direction, color</Code>
+        <Chevron
+        direction="LEFT"
+        color="#361E5C"
+        >
+        </Chevron>
+      </Content>
+      <Content>
+        <Code> Chevron Props: direction, color</Code>
+        <Chevron
+        direction="UP"
+        color="#361E5C"
+        >
+        </Chevron>
+      </Content>
+      <Content>
+        <Code> Chevron Props: direction, color</Code>
+        <Chevron
+        direction="DOWN"
+        color="#2EBF91"
         >
         </Chevron>
       </Content>

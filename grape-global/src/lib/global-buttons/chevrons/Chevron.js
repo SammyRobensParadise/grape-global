@@ -7,48 +7,59 @@ const right = "RIGHT";
 const ChevWrapperRight = styled.div`
   width: 0;
   height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  border-left: 60px solid green;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 23px solid ${p => p.color};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const ChevWrapperLeft = styled.div`
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-
-  border-right: 10px solid blue;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 23px solid ${p => p.color};
+  &:hover{
+      cursor: pointer;
+  }
 `;
 const ChevWrapperUp = styled.div`
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-
-  border-bottom: 5px solid black;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 23px solid ${p => p.color};
+  &:hover{
+      cursor: pointer;
+  }
 `;
 const ChevWrapperDown = styled.div`
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-
-  border-top: 20px solid #f00;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 23px solid ${p => p.color};
+  &:hover{
+      cursor: pointer;
+  }
 `;
-const GetStyle = (direction, color) => {
-    debugger
+const GetStyle = ({ direction, color }) => {
   switch (direction) {
-    case 'UP': {
+    case up: {
       return <ChevWrapperUp color={color}></ChevWrapperUp>;
     }
-    case 'DOWN': {
+    case down: {
       return <ChevWrapperDown color={color}></ChevWrapperDown>;
     }
-    case 'RIGHT': {
+    case left: {
+      return <ChevWrapperLeft color={color}></ChevWrapperLeft>;
+    }
+    case right: {
       return <ChevWrapperRight color={color}></ChevWrapperRight>;
     }
     default: {
-      return <ChevWrapperLeft color={color}></ChevWrapperLeft>;
+      return <ChevWrapperRight color={color}></ChevWrapperRight>;
     }
   }
 };
