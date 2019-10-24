@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Button, MultiButton, Chevron } from "./lib";
+import { Button, MultiButton, Chevron, SingleInput } from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
 
@@ -75,6 +75,7 @@ const App = () => (
     </Jumbotron>
     <SectionGradient></SectionGradient>
     <ButtonsSection></ButtonsSection>
+    <InputSection></InputSection>
   </Wrapper>
 );
 
@@ -85,7 +86,6 @@ const ButtonsSection = () => (
     </Jumbotron>
     <Container>
       <Content>
-        
         <Code>Button Props: text,small,event</Code>
         <Button
           text="Sign Up"
@@ -126,63 +126,72 @@ const ButtonsSection = () => (
         ></Button>
       </Content>
       <Content>
-        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent</Code>
+        <Code>
+          {" "}
+          MultiButton Props:
+          textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent
+        </Code>
         <MultiButton
-        textLeft="Left Buttton"
-        textRight="Right Button"
-        leftFocus={true}
-        rightFocus={false}
-        leftEvent={() => alert('left button clicked')}
-        rightEvent={() => alert('right button clicked')}
+          textLeft="Left Buttton"
+          textRight="Right Button"
+          leftFocus={true}
+          rightFocus={false}
+          leftEvent={() => alert("left button clicked")}
+          rightEvent={() => alert("right button clicked")}
         ></MultiButton>
       </Content>
       <br></br>
       <Content>
-        <Code> MultiButton Props: textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow</Code>
+        <Code>
+          {" "}
+          MultiButton Props:
+          textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow
+        </Code>
         <MultiButton
-        textLeft="Left Buttton"
-        textRight="Right Button"
-        leftFocus={false}
-        rightFocus={true}
-        leftEvent={() => alert('left button clicked')}
-        rightEvent={() => alert('right button clicked')}
-        dropShadow={true}
+          textLeft="Left Buttton"
+          textRight="Right Button"
+          leftFocus={false}
+          rightFocus={true}
+          leftEvent={() => alert("left button clicked")}
+          rightEvent={() => alert("right button clicked")}
+          dropShadow={true}
         ></MultiButton>
       </Content>
       <br></br>
       <Content>
         <Code> Chevron Props: direction, color</Code>
-        <Chevron
-        direction="RIGHT"
-        color="#2EBF91"
-        >
-        </Chevron>
+        <Chevron direction="RIGHT" color="#2EBF91"></Chevron>
       </Content>
       <Content>
         <Code> Chevron Props: direction, color</Code>
-        <Chevron
-        direction="LEFT"
-        color="#361E5C"
-        >
-        </Chevron>
+        <Chevron direction="LEFT" color="#361E5C"></Chevron>
       </Content>
       <Content>
         <Code> Chevron Props: direction, color</Code>
-        <Chevron
-        direction="UP"
-        color="#361E5C"
-        >
-        </Chevron>
+        <Chevron direction="UP" color="#361E5C"></Chevron>
       </Content>
       <Content>
         <Code> Chevron Props: direction, color</Code>
-        <Chevron
-        direction="DOWN"
-        color="#2EBF91"
-        >
-        </Chevron>
+        <Chevron direction="DOWN" color="#2EBF91"></Chevron>
       </Content>
     </Container>
+  </Container>
+);
+
+const InputSection = () => (
+  <Container>
+    <Jumbotron>
+      <SectionTitle>Inputs and Text Fields</SectionTitle>
+    </Jumbotron>
+    <Content>
+      <Code>Text Input Resizable and Scrollable Props: type,size,scrollAndResize</Code>
+      <SingleInput type="text" size="30" scrollAndResize={true}></SingleInput>
+    </Content>
+    <br></br>
+    <Content>
+      <Code>Text Input Resizable Default Props: type,size,scrollAndResize</Code>
+      <SingleInput type="text" size="30" scrollAndResize={false}></SingleInput>
+    </Content>
   </Container>
 );
 render(<App />, document.getElementById("root"));
