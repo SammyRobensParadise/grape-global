@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Button, MultiButton, Chevron, SingleInput } from "./lib";
+import { Button, MultiButton, Chevron, SingleInput, FixedInput } from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
 
@@ -191,6 +191,11 @@ const InputSection = () => (
     <Content>
       <Code>Text Input Resizable Default Props: type,size,scrollAndResize</Code>
       <SingleInput type="text" size="30" scrollAndResize={false}></SingleInput>
+    </Content>
+    <br></br>
+    <Content>
+      <Code>Text Input Resizable Default Props: type,size,width,height</Code>
+      <FixedInput type="text" size="30" width={800} height={300}></FixedInput>
     </Content>
   </Container>
 );
