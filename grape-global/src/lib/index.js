@@ -3,4 +3,5 @@ import MultiButton from "./global-buttons/buttons/MultiButton";
 import Chevron from "./global-buttons/chevrons/Chevron";
 import SingleInput from "./global-text-inputs/text-inputs/SingleInput";
 import FixedInput from "./global-text-inputs/text-inputs/FixedInput";
-export { Button, MultiButton, Chevron, SingleInput, FixedInput };
+import CheckBox from './checkboxes/checkbox'
+export { Button, MultiButton, Chevron, SingleInput, FixedInput, CheckBox };

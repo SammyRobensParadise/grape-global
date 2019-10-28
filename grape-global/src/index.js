@@ -1,6 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
-import { Button, MultiButton, Chevron, SingleInput, FixedInput } from "./lib";
+import {
+  Button,
+  MultiButton,
+  Chevron,
+  SingleInput,
+  FixedInput,
+  CheckBox
+} from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
 
@@ -76,6 +83,7 @@ const App = () => (
     <SectionGradient></SectionGradient>
     <ButtonsSection></ButtonsSection>
     <InputSection></InputSection>
+    <CheckBoxesSection></CheckBoxesSection>
   </Wrapper>
 );
 
@@ -184,7 +192,9 @@ const InputSection = () => (
       <SectionTitle>Inputs and Text Fields</SectionTitle>
     </Jumbotron>
     <Content>
-      <Code>Text Input Resizable and Scrollable Props: type,size,scrollAndResize</Code>
+      <Code>
+        Text Input Resizable and Scrollable Props: type,size,scrollAndResize
+      </Code>
       <SingleInput type="text" size="30" scrollAndResize={true}></SingleInput>
     </Content>
     <br></br>
@@ -199,4 +209,17 @@ const InputSection = () => (
     </Content>
   </Container>
 );
+
+const CheckBoxesSection = () => (
+  <Container>
+    <Jumbotron>
+      <SectionTitle>Inputs and Text Fields</SectionTitle>
+    </Jumbotron>
+    <Content>
+      <Code>CheckBox props: Checked</Code>
+      <CheckBox checked={true}></CheckBox>
+    </Content>
+  </Container>
+);
+
 render(<App />, document.getElementById("root"));
