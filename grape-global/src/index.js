@@ -138,7 +138,7 @@ const ButtonsSection = () => (
           rightFocus={false}
           leftEvent={() => alert("left button clicked")}
           rightEvent={() => alert("right button clicked")}
-        ></MultiButton>
+        />
       </Content>
       <br></br>
       <Content>
