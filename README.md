@@ -10,6 +10,6 @@ import {Component} from './lib'
 .
 
 
-<Component props={props}>
+<Component props={props} />
 
 ```
