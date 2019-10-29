@@ -19,10 +19,10 @@ transform: translateX(8px) translateY(4px);
 const Box = styled.div`
   width: 30px;
   height: 30px;
-  border: solid #000000 3px;
+  border: solid ${p => p.borderColor} 3px;
   &:hover{
       cursor: pointer;
-      background: #000000;
+      background: #F5F5F5;
   }
 `;
 const CheckMark = ({ checked }) => {
@@ -37,9 +37,9 @@ const CheckMark = ({ checked }) => {
 };
 
 const CLASSNAME = "check-box";
-const CheckBox = ({ checked }) => (
+const CheckBox = ({ checked,borderColor }) => (
   <div className={CLASSNAME}>
-    <Box>
+    <Box borderColor={borderColor}>
       <CheckMark checked={checked}></CheckMark>
     </Box>
   </div>
