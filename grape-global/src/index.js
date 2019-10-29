@@ -217,7 +217,11 @@ const CheckBoxesSection = () => (
     </Jumbotron>
     <Content>
       <Code>CheckBox props: Checked</Code>
-      <CheckBox checked={true}></CheckBox>
+      <CheckBox checked={true} borderColor={"#A9A9A9"} />
+    </Content>
+    <Content>
+      <Code>CheckBox props: Checked</Code>
+      <CheckBox checked={false} borderColor={"#A9A9A9"} />
     </Content>
   </Container>
 );

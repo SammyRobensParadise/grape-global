@@ -9,7 +9,6 @@ import {Component} from './lib'
 .
 .
 
-
 <Component props={props} />
 
 ```
