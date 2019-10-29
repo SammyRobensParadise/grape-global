@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import {
   Button,
@@ -210,20 +210,26 @@ const InputSection = () => (
   </Container>
 );
 
-const CheckBoxesSection = () => (
-  <Container>
-    <Jumbotron>
-      <SectionTitle>Inputs and Text Fields</SectionTitle>
-    </Jumbotron>
-    <Content>
-      <Code>CheckBox props: Checked, borderColor </Code>
-      <CheckBox checked={true} borderColor={"#A9A9A9"} />
-    </Content>
-    <Content>
-      <Code>CheckBox props: Checked, borderColor </Code>
-      <CheckBox checked={false} borderColor={"#A9A9A9"} />
-    </Content>
-  </Container>
-);
+const CheckBoxesSection = () => {
+  const [isChecked, setButtonState] = useState(0);
+  return (
+    <Container>
+      <Jumbotron>
+        <SectionTitle>Inputs and Text Fields</SectionTitle>
+      </Jumbotron>
+      <Content>
+        <Code>CheckBox props: Checked, borderColor </Code>
+        <CheckBox checked={true} borderColor={"#A9A9A9"} />
+      </Content>
+      <Content>
+        <Code>CheckBox props: Checked, borderColor </Code>
+        <CheckBox
+          checked={false}
+          borderColor={"#A9A9A9"}
+        />
+      </Content>
+    </Container>
+  );
+};
 
 render(<App />, document.getElementById("root"));
