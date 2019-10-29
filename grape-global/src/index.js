@@ -216,11 +216,11 @@ const CheckBoxesSection = () => (
       <SectionTitle>Inputs and Text Fields</SectionTitle>
     </Jumbotron>
     <Content>
-      <Code>CheckBox props: Checked</Code>
+      <Code>CheckBox props: Checked, borderColor </Code>
       <CheckBox checked={true} borderColor={"#A9A9A9"} />
     </Content>
     <Content>
-      <Code>CheckBox props: Checked</Code>
+      <Code>CheckBox props: Checked, borderColor </Code>
       <CheckBox checked={false} borderColor={"#A9A9A9"} />
     </Content>
   </Container>
