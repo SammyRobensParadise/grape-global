@@ -212,6 +212,8 @@ const InputSection = () => (
 
 const CheckBoxesSection = () => {
   const [isChecked, setButtonState] = useState(0);
+  const [count, setCount] = useState(0);
+
   return (
     <Container>
       <Jumbotron>
@@ -219,13 +221,18 @@ const CheckBoxesSection = () => {
       </Jumbotron>
       <Content>
         <Code>CheckBox props: Checked, borderColor </Code>
-        <CheckBox checked={true} borderColor={"#A9A9A9"} />
+        <CheckBox
+          checked={count % 2 === 0 ? true : false}
+          borderColor={"#A9A9A9"}
+          event={() => setCount(count + 1)}
+        />
       </Content>
       <Content>
         <Code>CheckBox props: Checked, borderColor </Code>
         <CheckBox
-          checked={false}
+          checked={count % 2 === 0 ? false : true}
           borderColor={"#A9A9A9"}
+          event={() => setCount(count + 1)}
         />
       </Content>
     </Container>
