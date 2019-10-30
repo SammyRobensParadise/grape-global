@@ -14,15 +14,15 @@ const CheckedTwo = styled.div`
   transform: translateX(-7px) translateY(-0px) rotate(45deg);
 `;
 const CheckedWrapper = styled.div`
-transform: translateX(8px) translateY(4px);
+  transform: translateX(8px) translateY(4px);
 `;
 const Box = styled.div`
   width: 30px;
   height: 30px;
   border: solid ${p => p.borderColor} 3px;
-  &:hover{
-      cursor: pointer;
-      background: #F5F5F5;
+  &:hover {
+    cursor: pointer;
+    background: #f5f5f5;
   }
 `;
 const CheckMark = ({ checked }) => {
@@ -37,9 +37,9 @@ const CheckMark = ({ checked }) => {
 };
 
 const CLASSNAME = "check-box";
-const CheckBox = ({ checked,borderColor }) => (
+const CheckBox = ({ checked, borderColor, event }) => (
   <div className={CLASSNAME}>
-    <Box borderColor={borderColor}>
+    <Box borderColor={borderColor} onClick={event}>
       <CheckMark checked={checked}></CheckMark>
     </Box>
   </div>
