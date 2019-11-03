@@ -1,1 +1,1 @@
-{ "extends": "react-app" }
+{ "extends": "grape-global" }

@@ -6,7 +6,8 @@ import {
   Chevron,
   SingleInput,
   FixedInput,
-  CheckBox
+  CheckBox,
+  Icon
 } from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
@@ -84,107 +85,113 @@ const App = () => (
     <ButtonsSection></ButtonsSection>
     <InputSection></InputSection>
     <CheckBoxesSection></CheckBoxesSection>
+    <IconSection></IconSection>
   </Wrapper>
 );
 
-const ButtonsSection = () => (
-  <Container>
-    <Jumbotron>
-      <SectionTitle>Buttons and Toggles</SectionTitle>
-    </Jumbotron>
+const ButtonsSection = () => {
+  const [count, setCount] = useState(0);
+  const [countTwo, setCountTwo] = useState(0);
+
+  return (
     <Container>
-      <Content>
-        <Code>Button Props: text,small,event</Code>
-        <Button
-          text="Sign Up"
-          small={true}
-          event={() => alert("Button Clicked!")}
-          hover={true}
-        ></Button>
-      </Content>
-      <Content>
-        <Code>Button Props: text,small,event,dropShadow</Code>
-        <Button
-          text="Sign Up"
-          small={true}
-          event={() => alert("Button Clicked!")}
-          dropShadow={true}
-          hover={true}
-        ></Button>
-      </Content>
-      <Content>
-        <Code>Button Props: text,small,event,hover,invert</Code>
-        <Button
-          text="Sign Up"
-          small={true}
-          invert={true}
-          hover={true}
-          event={() => alert("Button Clicked!")}
-        ></Button>
-      </Content>
-      <Content>
-        <Code>Button Props: text,small,event,dropShadow,hover,invert</Code>
-        <Button
-          text="Sign Up"
-          small={true}
-          invert={true}
-          hover={true}
-          dropShadow={true}
-          event={() => alert("Button Clicked!")}
-        ></Button>
-      </Content>
-      <Content>
-        <Code>
-          {" "}
-          MultiButton Props:
-          textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent
-        </Code>
-        <MultiButton
-          textLeft="Left Buttton"
-          textRight="Right Button"
-          leftFocus={true}
-          rightFocus={false}
-          leftEvent={() => alert("left button clicked")}
-          rightEvent={() => alert("right button clicked")}
-        />
-      </Content>
-      <br></br>
-      <Content>
-        <Code>
-          {" "}
-          MultiButton Props:
-          textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow
-        </Code>
-        <MultiButton
-          textLeft="Left Buttton"
-          textRight="Right Button"
-          leftFocus={false}
-          rightFocus={true}
-          leftEvent={() => alert("left button clicked")}
-          rightEvent={() => alert("right button clicked")}
-          dropShadow={true}
-        ></MultiButton>
-      </Content>
-      <br></br>
-      <Content>
-        <Code> Chevron Props: direction, color</Code>
-        <Chevron direction="RIGHT" color="#2EBF91"></Chevron>
-      </Content>
-      <Content>
-        <Code> Chevron Props: direction, color</Code>
-        <Chevron direction="LEFT" color="#361E5C"></Chevron>
-      </Content>
-      <Content>
-        <Code> Chevron Props: direction, color</Code>
-        <Chevron direction="UP" color="#361E5C"></Chevron>
-      </Content>
-      <Content>
-        <Code> Chevron Props: direction, color</Code>
-        <Chevron direction="DOWN" color="#2EBF91"></Chevron>
-      </Content>
+      <Jumbotron>
+        <SectionTitle>Buttons and Toggles</SectionTitle>
+      </Jumbotron>
+      <Container>
+        <Content>
+          <Code>Button Props: text,small,event</Code>
+          <Button
+            text="Sign Up"
+            small={true}
+            event={() => alert("Button Clicked!")}
+            hover={true}
+          ></Button>
+        </Content>
+        <Content>
+          <Code>Button Props: text,small,event,dropShadow</Code>
+          <Button
+            text="Sign Up"
+            small={true}
+            event={() => alert("Button Clicked!")}
+            dropShadow={true}
+            hover={true}
+          ></Button>
+        </Content>
+        <Content>
+          <Code>Button Props: text,small,event,hover,invert</Code>
+          <Button
+            text="Sign Up"
+            small={true}
+            invert={true}
+            hover={true}
+            event={() => alert("Button Clicked!")}
+          ></Button>
+        </Content>
+        <Content>
+          <Code>Button Props: text,small,event,dropShadow,hover,invert</Code>
+          <Button
+            text="Sign Up"
+            small={true}
+            invert={true}
+            hover={true}
+            dropShadow={true}
+            event={() => alert("Button Clicked!")}
+          ></Button>
+        </Content>
+        <Content>
+          <Code>
+            {" "}
+            MultiButton Props:
+            textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent
+          </Code>
+          <MultiButton
+            textLeft="Left Buttton"
+            textRight="Right Button"
+            leftFocus={count % 2 === 0 ? true : false}
+            rightFocus={count % 2 === 0 ? false : true}
+            leftEvent={() => setCount(count + 1)}
+            rightEvent={() => setCount(count + 1)}
+          />
+        </Content>
+        <br></br>
+        <Content>
+          <Code>
+            {" "}
+            MultiButton Props:
+            textLeft,textRight,leftFocus,RightFocus,leftEvent,RightEvent,dropShadow
+          </Code>
+          <MultiButton
+            textLeft="Left Buttton"
+            textRight="Right Button"
+            leftFocus={countTwo % 2 === 0 ? false : true}
+            rightFocus={countTwo % 2 === 0 ? true : false}
+            leftEvent={() => setCountTwo(countTwo + 1)}
+            rightEvent={() => setCountTwo(countTwo + 1)}
+            dropShadow={true}
+          ></MultiButton>
+        </Content>
+        <br></br>
+        <Content>
+          <Code> Chevron Props: direction, color</Code>
+          <Chevron direction="RIGHT" color="#2EBF91"></Chevron>
+        </Content>
+        <Content>
+          <Code> Chevron Props: direction, color</Code>
+          <Chevron direction="LEFT" color="#361E5C"></Chevron>
+        </Content>
+        <Content>
+          <Code> Chevron Props: direction, color</Code>
+          <Chevron direction="UP" color="#361E5C"></Chevron>
+        </Content>
+        <Content>
+          <Code> Chevron Props: direction, color</Code>
+          <Chevron direction="DOWN" color="#2EBF91"></Chevron>
+        </Content>
+      </Container>
     </Container>
-  </Container>
-);
+  );
+};
 
 const InputSection = () => (
   <Container>
@@ -211,9 +218,7 @@ const InputSection = () => (
 );
 
 const CheckBoxesSection = () => {
-  const [isChecked, setButtonState] = useState(0);
   const [count, setCount] = useState(0);
-
   return (
     <Container>
       <Jumbotron>
@@ -239,4 +244,16 @@ const CheckBoxesSection = () => {
   );
 };
 
+const IconSection =  () => {
+  return (
+    <Container>
+    <Jumbotron>
+      <SectionTitle>Icons</SectionTitle>
+    </Jumbotron>
+    <Content>
+      <Icon />
+    </Content>
+  </Container>
+  )
+}
 render(<App />, document.getElementById("root"));
