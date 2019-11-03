@@ -6,7 +6,8 @@ import {
   Chevron,
   SingleInput,
   FixedInput,
-  CheckBox
+  CheckBox,
+  Icon
 } from "./lib";
 import { Container, Jumbotron } from "reactstrap";
 import styled from "styled-components";
@@ -84,6 +85,7 @@ const App = () => (
     <ButtonsSection></ButtonsSection>
     <InputSection></InputSection>
     <CheckBoxesSection></CheckBoxesSection>
+    <IconSection></IconSection>
   </Wrapper>
 );
 
@@ -217,7 +219,6 @@ const InputSection = () => (
 
 const CheckBoxesSection = () => {
   const [count, setCount] = useState(0);
-
   return (
     <Container>
       <Jumbotron>
@@ -243,4 +244,16 @@ const CheckBoxesSection = () => {
   );
 };
 
+const IconSection =  () => {
+  return (
+    <Container>
+    <Jumbotron>
+      <SectionTitle>Icons</SectionTitle>
+    </Jumbotron>
+    <Content>
+      <Icon />
+    </Content>
+  </Container>
+  )
+}
 render(<App />, document.getElementById("root"));
